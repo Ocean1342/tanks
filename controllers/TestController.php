@@ -12,13 +12,12 @@ class TestController extends Controller
     {
 
         $map = new GameMap();
-//        ob_start();
         $obj = new GameObject();
         $obj->setPosition();
 
-//        $var = ob_get_clean();
-        $var = $map->printMap($obj);
-        return $this->render('index',compact('var'));
+//        $printedMap = ob_get_clean();
+        $printedMap = $map->printMap($obj);
+        return $this->render('index',compact('printedMap'));
 
     }
 
