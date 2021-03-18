@@ -1,5 +1,8 @@
 <div class="container">
     <div class="col-xs-12">
+        <pre>
+            <?php print_r($state);?>
+        </pre>
         <p>Имя игрока: </p>
         <p>Имя игрока: </p>
     </div>
@@ -7,4 +10,4 @@
 
 <?php
 
-print_r($printedMap);
+echo $printedMap;

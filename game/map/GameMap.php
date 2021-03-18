@@ -18,7 +18,8 @@ Class GameMap
                 foreach ($argList as $obj) {
                     //занято ли поле объектом
                     if ($x == $obj->x  && $y == $obj->y) {
-                        $objHtml = '<div class="tank" data-name="$obj->name"></div>';
+                        $objHtml = '<div class="tank text-white" data-name="'.$obj->name.'" style="background:'.$obj->color.'">
+                        '.$obj->name.'</div>';
 //                        break;
                     }
                 }

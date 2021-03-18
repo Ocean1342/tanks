@@ -1,9 +1,11 @@
 <?php
-/* @var $this yii\web\View */
-?>
-<h1>game/index</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+use \yii\helpers\Html;
+
+?>
+<div class="container">
+<?=Html::a('Начать игру', ['game/play','state'=>'start'],['class' => 'btn btn-info col-xs-3']);?>
+
+
+<?=Html::a('Продолжить игру', ['game/continue'],['class' => 'btn btn-default col-xs-3']);?>
+</div>

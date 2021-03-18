@@ -1,47 +1,31 @@
 <?php
 
+
 namespace app\models;
 
-use Yii;
 
-/**
- * This is the model class for table "game".
- *
- * @property int $id
- * @property string|null $player1
- * @property string|null $player2
- * @property string|null $winner
- */
-class Game extends \yii\db\ActiveRecord
+use app\game\map\GameMap;
+use app\game\object\GameObject;
+use yii\base\Model;
+
+class Game extends Model
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
+    /*
+     * В этой модели описываем логику игры
+     *
+     * */
+    public static function startGame()
     {
-        return 'game';
+        $map = new GameMap();
+        $objPlayer = new GameObject(0,0,'red','player1');
+        $objPC =  new GameObject(11,11,'blue','PC');
+        //создание игры и запись в базу
+        $printedMap = $map->printMap($objPlayer,$objPC);
+        return $printedMap;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
+    public function continueGame()
     {
-        return [
-            [['player1', 'player2', 'winner'], 'string', 'max' => 255],
-        ];
-    }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'player1' => 'Player1',
-            'player2' => 'Player2',
-            'winner' => 'Winner',
-        ];
     }
 }

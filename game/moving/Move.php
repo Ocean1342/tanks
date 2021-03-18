@@ -4,7 +4,7 @@
 namespace app\game\moving;
 
 
-class Move implements Movable
+class Move implements iMovable
 {
     public function setPosition(array $position = [0,0])
     {
